@@ -1,0 +1,57 @@
+.registerPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ccc;
+}
+
+.registerForm {
+  padding: 60px 80px;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  box-shadow: 4px 4px 12px -2px rgba(20%, 20%, 40%, 0.5);
+
+  > h1 {
+    font-size: 28px;
+  }
+
+  .formItem {
+    display: flex;
+    position: relative;
+    margin: 0;
+
+    .formItem_title {
+      width: 100px;
+    }
+
+    .formItem_input {
+      flex: 1;
+    }
+    .formItem_input-error{
+      border: 1px solid red;
+    }
+
+    .formItem_eye{
+      position: absolute;
+      right: 2px;
+      cursor: pointer;
+    }
+
+  }
+
+  p {
+    width: 100%;
+    height: 20px;
+    margin: 0 0 10px 100px;
+    text-align: left;
+    color: red;
+  }
+
+  .formButton{
+    margin-top: 20px;
+  }
+
+}
