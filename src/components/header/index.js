@@ -3,7 +3,6 @@ import './header.scss'
 import React from 'react';
 import { BiExit,BiMenu } from "react-icons/bi";
 
-// BiExit
 const Header = ({setOpen,open}) => {
   
   const handleOpen = () => {

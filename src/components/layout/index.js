@@ -11,10 +11,12 @@ const Layout = (props) => {
   const [open,setOpen] = useState(false)
 
   return (
-      <div className="wrapper">
+      <div className="layout">
         <Header setOpen={setOpen} open={open}></Header>
-        <SideBar open = {open}></SideBar>
-        {children}
+        <div className="wrapper">
+          <SideBar open = {open}></SideBar>
+          {children}
+        </div>
       </div>
   )
 }
