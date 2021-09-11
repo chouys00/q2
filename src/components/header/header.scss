@@ -1,0 +1,19 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  //width: 100%;
+  border-bottom: 1px solid black;
+  padding: 0 20px;
+  .header_left{
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+  }
+  .header_right{
+    .exit-logo{
+      font-size: 50px;
+    }
+  }
+}

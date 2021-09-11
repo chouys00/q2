@@ -1,8 +1,16 @@
 import './App.scss';
 import {useEffect, Suspense} from 'react';
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import routes from './router/index';
 import renderRoutes from './router/renderRoutes.js';
+
+import Layout from './components/layout'
+
+import Login from './pages/login';
+import Register from './pages/register';
+import Page404 from './pages/page404';
+import Home from './pages/home';
+import News from './pages/news';
 
 function App() {
   useEffect(() =>
@@ -12,16 +20,22 @@ function App() {
   const authPath = '/login';
 
   return (
+      <Router>
+        <div className="App">
 
-      <div className="App">
+          <Switch>
+            <Route path="/404" component={Page404}/>
+            <Route exact path="/login" component={Login}/>
+            <Route path="/register" component={Register}/>
+            <Layout>
+              <Route path="/home" component={Home}/>
+              <Route path="/news" component={News}/>
+              {/*<Redirect to="/404" />*/}
+            </Layout>
+          </Switch>
 
-        <Switch>
-          {renderRoutes(routes, authed, authPath)}
-        </Switch>
-
-      </div>
-
-
+        </div>
+      </Router>
   );
 }
 

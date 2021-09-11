@@ -1,3 +1,5 @@
+
+
 .loginPage {
   width: 100%;
   height: 100%;
@@ -5,6 +7,19 @@
   justify-content: center;
   align-items: center;
   background: #ccc;
+}
+
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .loginForm {
@@ -30,11 +45,12 @@
     .formItem_input {
       flex: 1;
     }
-    .formItem_input-error{
+
+    .formItem_input-error {
       border: 1px solid red;
     }
 
-    .formItem_eye{
+    .formItem_eye {
       position: absolute;
       right: 2px;
       cursor: pointer;
@@ -50,7 +66,7 @@
     color: red;
   }
 
-  .formButton{
+  .formButton {
     margin-top: 20px;
   }
 

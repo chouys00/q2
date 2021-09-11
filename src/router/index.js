@@ -13,21 +13,41 @@ const routes = [
     component: lazy(() => import('../pages/register')),
     requiresAuth: false,
   },
+
+  {
+    path: '/home',
+    component: lazy(() => import('../pages/home')),
+    requiresAuth: false,
+    children:[
+      {
+        path: '/home',
+        component: lazy(() => import('../pages/home')),
+        requiresAuth: true,
+      },
+      {
+        path: '/news',
+        component: lazy(() => import('../pages/news')),
+        requiresAuth: true,
+      },
+
+    ]
+  },
   {
     path: '*',
     component: lazy(() => import('../pages/page404')),
     requiresAuth: false,
   },
-  {
-    path: '/home',
-    component: lazy(() => import('../pages/home')),
-    requiresAuth: true,
-  },
-  {
-    path: '/news',
-    component: lazy(() => import('../pages/news')),
-    requiresAuth: true,
-  },
+
+  // {
+  //   path: '/home',
+  //   component: lazy(() => import('../pages/news')),
+  //   requiresAuth: true,
+  // },
+  // {
+  //   path: '/news',
+  //   component: lazy(() => import('../pages/news')),
+  //   requiresAuth: true,
+  // },
 ];
 
 export default routes;

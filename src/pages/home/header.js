@@ -2,13 +2,13 @@
 import './home.scss'
 import React from 'react';
 
-const home = ({route}) => {
+const Header = ({route}) => {
 
   return (
       <div className='home'>
-        home
+        Header
       </div>
   )
 }
 
-export default home;
+export default Header;

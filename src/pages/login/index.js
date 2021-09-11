@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import verify from './verify.js';
 // import alert from '../../common/components/alert/alert'
+
 import {useHistory} from 'react-router-dom';
 import eye from '../../assets/icon_eye.png';
 
@@ -60,6 +61,8 @@ const Index = () => {
 
   return (
       <div className="loginPage">
+
+
         <div className="loginForm">
           <h1>登入</h1>
 
