@@ -6,11 +6,12 @@ import renderRoutes from './router/renderRoutes.js';
 
 import Layout from './components/layout'
 
-import Login from './pages/login';
-import Register from './pages/register';
-import Page404 from './pages/page404';
-import Home from './pages/home';
-import News from './pages/news';
+import Login from '@/pages/login';
+import Register from '@/pages/register';
+import Page404 from '@/pages/page404';
+import Home from '@/pages/home';
+import News from '@/pages/news';
+import ProfileSetting from '@/pages/profileSetting';
 
 function App() {
   useEffect(() =>
@@ -30,6 +31,7 @@ function App() {
             <Layout>
               <Route path="/home" component={Home}/>
               <Route path="/news" component={News}/>
+              <Route path="/account/profile-setting" component={ProfileSetting}/>
               {/*<Redirect to="/404" />*/}
             </Layout>
           </Switch>

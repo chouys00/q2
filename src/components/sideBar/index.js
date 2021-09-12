@@ -1,7 +1,7 @@
 import './sideBar.scss';
 import {useState} from 'react';
-import DropDown from '../dropDown';
-import Menu from '../menu';
+import DropDown from '@Components/dropDown';
+import Menu from '@Components/menu';
 import {AiOutlineUser, AiOutlineCaretDown, AiOutlineTeam,AiOutlineComment,AiOutlineDribbble } from 'react-icons/ai';
 
 const SideBar = ({open}) => {
@@ -23,44 +23,44 @@ const SideBar = ({open}) => {
     {
       id: '1',
       name: '會員管理',
-      path:'/login',
+      path:'/news',
       icon: <AiOutlineTeam/>
     },
     {
       id: '2',
-      name: '狗狗管理',
+      name: '狗狗怎麼叫',
       icon: <AiOutlineComment/>,
       children: [
           {
             id: '2.1',
             name: '汪汪',
-            path:'/login',
+            path:'/news',
             icon: <AiOutlineDribbble/>
           }
       ]
     },
     {
       id: '3',
-      name: '貓貓管理',
+      name: '時間管理',
       key: '/charts',
       icon: <AiOutlineTeam/>,
       children: [
         {
           id: '3.1',
-          name: '喵喵',
-          path:'/login',
+          name: '吃飯',
+          path:'/home',
           icon: <AiOutlineDribbble/>
         },
         {
           id: '3.2',
-          name: '吼吼',
-          path:'/login',
+          name: '睡覺',
+          path:'/news',
           icon: <AiOutlineDribbble/>
         },
         {
           id: '3.3',
-          name: '嘶嘶叫',
-          path:'/register',
+          name: '打東東',
+          path:'/home',
           icon: <AiOutlineComment/>
         },
       ]

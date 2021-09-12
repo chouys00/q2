@@ -2,11 +2,17 @@
 import './header.scss'
 import React from 'react';
 import { BiExit,BiMenu } from "react-icons/bi";
+import { useHistory } from "react-router-dom";
 
 const Header = ({setOpen,open}) => {
+  const history = useHistory();
   
   const handleOpen = () => {
     setOpen(!open)
+  }
+
+  const handleLogout = () => {
+    history.push('/login')
   }
 
   return (
@@ -16,7 +22,7 @@ const Header = ({setOpen,open}) => {
           <BiMenu></BiMenu>
         </div>
         <div className='header_right'>
-          <BiExit className="exit-logo" />
+          <BiExit className="exit-logo" onClick={handleLogout}/>
         </div>
       </div>
   )

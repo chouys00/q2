@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "./Layout.scss"
-import Header from "../header"
-import SideBar from "../sideBar"
+import Header from "@Components/header"
+import SideBar from "@Components/sideBar"
 
 import {Link} from 'react-router-dom'
 
