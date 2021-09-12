@@ -2,7 +2,7 @@ import './dropDown.scss';
 import {useState,useEffect,useRef} from 'react';
 import { Link } from "react-router-dom"
 
-const DropDown = ({listData, titleDom}) => {
+const DropDown = ({listData, titleDom, open}) => {
   const [showMenu, setShowMenu] = useState(false);
   const wrapper=useRef("")
 
@@ -33,7 +33,7 @@ const DropDown = ({listData, titleDom}) => {
         </div>
         {
 
-          showMenu&&<ul className="dropDown_list" >
+          showMenu&&<ul className={`dropDown_list ${!open&&'closeMode'}`} >
             {
               listData.map((item,key) => (
                   <li key={key} className="dropDown_list_item" >

@@ -1,0 +1,30 @@
+.selected{
+}
+
+
+.menuGroup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  svg{
+    font-size: 30px;
+    margin-right: 5px;
+  }
+
+  .menuItem_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .arrow{
+      font-size: 20px;
+    }
+  }
+  .menuItem{
+    padding: 10px 10px;
+  }
+
+  .closeMode{
+    display: none;
+  }
+}

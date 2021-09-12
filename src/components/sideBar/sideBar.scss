@@ -1,14 +1,14 @@
 .sideBar{
   width: 250px;
   height: 100%;
-  background: red;
+  border-right: 1px solid #333;
 }
 
 .sideBar-active{
   width: 50px;
 }
 
-.userSection{
+.userWrap{
   padding: 10px 0;
   justify-content: center;
   align-items: center;
@@ -19,3 +19,6 @@
   }
 }
 
+.menuWrap{
+  padding: 20px;
+}

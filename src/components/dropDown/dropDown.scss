@@ -1,4 +1,11 @@
 .dropDown{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+
   .dropDown_title{
     display: flex;
     align-items: center;
@@ -9,6 +16,16 @@
     flex-direction: column;
     .dropDown_list_item{
       margin: 5px 0;
+    }
+  }
+  .closeMode{
+    border: 1px solid #333;
+    padding: 10px;
+    position: absolute;
+    top:0;
+    right:-100px;
+    .dropDown_list_item{
+      //border: 1px solid #333;
     }
   }
 }
