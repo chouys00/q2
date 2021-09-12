@@ -7,3 +7,15 @@
 .sideBar-active{
   width: 50px;
 }
+
+.userSection{
+  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid #333;
+  .aiOutlineUser{
+    font-size: 30px;
+  }
+}
+

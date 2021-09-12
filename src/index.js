@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './reset.scss';
+import './reset.scss';
 import './index.css';
 import App from './App';
 import {setupMSW} from './mocks/browser';

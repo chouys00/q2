@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 
 const Layout = (props) => {
   const { children } = props
-  const [open,setOpen] = useState(false)
+  const [open,setOpen] = useState(true)
 
   return (
       <div className="layout">
