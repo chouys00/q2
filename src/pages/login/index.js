@@ -2,6 +2,7 @@ import './login.scss';
 import React, {useEffect, useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import verify from './verify.js';
+import {userLogIn} from '@api/user.js';
 // import alert from '../../common/components/alert/alert'
 
 import {useHistory} from 'react-router-dom';
@@ -29,27 +30,18 @@ const Index = () => {
     setIsSubmit(true);
   };
 
-  const submitFormData = () => {
+  const submitFormData = async () => {
 
-    fetch('/api/login', {
-      method: 'post',
-      body: JSON.stringify({username: value.account, password: value.password}),
-      headers: new Headers({
-        'Content-Type': 'application/json',
-      }),
-    })
-        .then(res => res.json())
-        .then((res) => {
-          if (res.success) {
-            sessionStorage.setItem('token', res.token);
-            alert(res.message);
-            history.push('/home');
-          } else {
-            alert(res.message);
-          }
-        }).catch((error) => {
-      console.log(error);
-    });
+    const data = {username: value.account, password: value.password};
+
+    await userLogIn(data)
+        .then(res => {
+          localStorage.setItem('token', res.data.token)
+          history.push('./home')
+        })
+        .catch(error => {
+          console.log(error);
+        });
   };
 
   useEffect(() => {

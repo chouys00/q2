@@ -14,11 +14,9 @@ import News from '@/pages/news';
 import ProfileSetting from '@/pages/profileSetting';
 
 function App() {
-  useEffect(() =>
-      fetch('/api/authentication'), []);
 
-  const authed = false;
-  const authPath = '/login';
+  // const authed = false;
+  // const authPath = '/login';
 
   return (
       <Router>
