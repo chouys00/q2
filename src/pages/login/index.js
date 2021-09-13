@@ -2,7 +2,7 @@ import './login.scss';
 import React, {useEffect, useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import verify from './verify.js';
-import {userLogIn} from '@api/user.js';
+import {userLogIn} from '@Api/user.js';
 // import alert from '../../common/components/alert/alert'
 
 import {useHistory} from 'react-router-dom';
