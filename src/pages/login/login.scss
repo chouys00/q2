@@ -9,19 +9,6 @@
   background: #ccc;
 }
 
-.bg-gray-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
-}
-
-.min-h-screen {
-  min-height: 100vh;
-}
-
-.w-full {
-  width: 100%;
-}
-
 .loginForm {
   padding: 60px 80px;
   width: 500px;
@@ -30,10 +17,12 @@
   box-shadow: 4px 4px 12px -2px rgba(20%, 20%, 40%, 0.5);
 
   > h1 {
+    padding: 10px 20px;
     font-size: 28px;
   }
 
   .formItem {
+    padding: 5px 10px;
     display: flex;
     position: relative;
     margin: 0;
@@ -52,7 +41,7 @@
 
     .formItem_eye {
       position: absolute;
-      right: 2px;
+      right: 12px;
       cursor: pointer;
     }
 
@@ -61,13 +50,13 @@
   p {
     width: 100%;
     height: 20px;
-    margin: 0 0 10px 100px;
+    padding: 0 0 0 110px;
     text-align: left;
     color: red;
   }
 
   .formButton {
-    margin-top: 20px;
+    //margin-top: 20px;
   }
 
 }
