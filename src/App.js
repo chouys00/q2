@@ -1,10 +1,15 @@
 import './App.scss';
 import {useEffect, Suspense} from 'react';
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 import routes from './router/index';
 import renderRoutes from './router/renderRoutes.js';
 
-import Layout from './components/layout'
+import Layout from './components/layout';
 
 import Login from '@/pages/login';
 import Register from '@/pages/register';
@@ -15,7 +20,7 @@ import ProfileSetting from '@/pages/profileSetting';
 
 function App() {
 
-  // const authed = false;
+  const authed = localStorage.getItem('token');
   // const authPath = '/login';
 
   return (
@@ -23,16 +28,27 @@ function App() {
         <div className="App">
 
           <Switch>
-            <Route path="/404" component={Page404}/>
-            <Route exact path="/login" component={Login}/>
-            <Route path="/register" component={Register}/>
-            <Layout>
-              <Route path="/home" component={Home}/>
-              <Route path="/news" component={News}/>
-              <Route path="/account/profile-setting" component={ProfileSetting}/>
-              {/*<Redirect to="/404" />*/}
-            </Layout>
+
+            {
+              authed ?
+                  (
+                      <Layout>
+                        <Route exact path="/home" component={Home}/>
+                        <Route exact path="/news" component={News}/>
+                        <Route exact path="/account/profile-setting"
+                               component={ProfileSetting}/>
+                        <Redirect exact to="/home"/>
+                      </Layout>
+                  )
+                  : (
+                      <Redirect to="/login"/>
+                  )
+
+            }
           </Switch>
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/register" component={Register}/>
+          <Route component={Page404}/>
 
         </div>
       </Router>
