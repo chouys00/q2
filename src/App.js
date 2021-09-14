@@ -27,28 +27,20 @@ function App() {
       <Router>
         <div className="App">
 
+
           <Switch>
 
-            {
-              authed ?
-                  (
-                      <Layout>
-                        <Route exact path="/home" component={Home}/>
-                        <Route exact path="/news" component={News}/>
-                        <Route exact path="/account/profile-setting"
-                               component={ProfileSetting}/>
-                        <Redirect exact to="/home"/>
-                      </Layout>
-                  )
-                  : (
-                      <Redirect to="/login"/>
-                  )
+              <Route exact path="/login" component={Login}/>
+              <Route exact path="/register" component={Register}/>
+              <Layout>
+                <Route exact path="/home" component={Home}/>
+                <Route exact path="/news" component={News}/>
+                <Route exact path="/account/profile-setting"
+                       component={ProfileSetting}/>
+              </Layout>
+              <Route component={Page404}/>
 
-            }
           </Switch>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/register" component={Register}/>
-          <Route component={Page404}/>
 
         </div>
       </Router>

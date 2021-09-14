@@ -12,9 +12,9 @@ const Layout = (props) => {
 
   return (
       <div className="layout">
-        <Header setOpen={setOpen} open={open}></Header>
+        <Header setOpen={setOpen} open={open}/>
         <div className="wrapper">
-          <SideBar open = {open}></SideBar>
+          <SideBar open = {open}/>
           {children}
         </div>
       </div>

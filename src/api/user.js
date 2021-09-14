@@ -12,4 +12,8 @@ export const userRegister = (data) => {
   return req("post", "/register", data)
 }
 
+export const updateUserImg = (data) => {
+  return req("post", "/users/uploadBase64Picture", data)
+}
+
 

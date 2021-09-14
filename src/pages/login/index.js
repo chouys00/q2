@@ -37,6 +37,7 @@ const Index = () => {
     await userLogIn(data)
         .then(res => {
           localStorage.setItem('token', res.data.token)
+          localStorage.setItem('user', JSON.stringify(res.data.data))
           history.push('./home')
         })
         .catch(error => {
