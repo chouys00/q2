@@ -7,7 +7,7 @@ import {updateUserImg} from '@Api/user.js';
 /*
 一般圖片上傳
 全局彈窗未完成，用臨時 modal 替代
-路由、api權限未做
+路由、api權限未做，api呼不過 QQ
 */
 
 
