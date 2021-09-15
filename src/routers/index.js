@@ -38,6 +38,11 @@ const routes = [
         component: Home,
       },
       {
+        path: '/News',
+        exact: true,
+        component: News,
+      },
+      {
         path: '/account',
         exact: true,
         component: ProfileSetting,
