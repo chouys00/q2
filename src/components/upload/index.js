@@ -54,7 +54,7 @@ const Upload = ({children,imgLink}) => {
 
     await updateUserImg(data)
         .then(res => {
-          setImgSrc(previewImg)
+          // setImgSrc(previewImg)
           setOpen(false)
         })
         .catch(error => {

@@ -14,8 +14,12 @@ const ProfileSetting = () => {
       history.replace('/login')
       return
     }
-    const userData = JSON.parse(localStorage.getItem('user'));
 
+    getUserData()
+  },[])
+
+  const getUserData = () => {
+    const userData = JSON.parse(localStorage.getItem('user'));
     setUser(
         {
           name:userData.name,
@@ -23,8 +27,7 @@ const ProfileSetting = () => {
           imgLink:userData.imgLink,
         }
     )
-  },[])
-
+  }
 
   return (
       <div className='profileSetting'>

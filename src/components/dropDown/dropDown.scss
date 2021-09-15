@@ -16,6 +16,9 @@
     flex-direction: column;
     .dropDown_list_item{
       margin: 5px 0;
+      :hover{
+        background: #ccc;
+      }
     }
   }
   .closeMode{
@@ -24,6 +27,8 @@
     position: absolute;
     top:0;
     right:-100px;
+    background: #fff;
+    z-index: 3;
     .dropDown_list_item{
       //border: 1px solid #333;
     }
