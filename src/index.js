@@ -2,10 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './reset.scss';
 import './index.css';
-import App from './App';
-// import {setupMSW} from './mocks/browser';
+import { renderRoutes } from 'react-router-config';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(<App/> ,document.getElementById('root'))
+import routes from "./routers";
+
+// ReactDOM.render(<App/> ,document.getElementById('root'))
+
+// setupMSW().then(() =>
+    ReactDOM.render(
+        <React.StrictMode>
+          <BrowserRouter>
+            { renderRoutes(routes) }
+          </BrowserRouter>
+        </React.StrictMode>,
+        document.getElementById('root')
+    )
+// );
 
 // setupMSW().then(() => ReactDOM.render(<App/> ,document.getElementById('root')));
 

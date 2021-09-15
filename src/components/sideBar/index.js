@@ -10,7 +10,7 @@ const SideBar = ({open}) => {
     {
       label: '帳戶設定1',
       value: 1,
-      path: '/account/profile-setting',
+      path: '/account',
     },
     {
       label: '帳戶設定2',
