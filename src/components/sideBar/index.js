@@ -23,48 +23,48 @@ const SideBar = ({open}) => {
     {
       id: '1',
       name: '會員管理',
-      path:'/news',
+      path:'/member/list',
       icon: <AiOutlineTeam/>
     },
-    {
-      id: '2',
-      name: '狗狗怎麼叫',
-      icon: <AiOutlineComment/>,
-      children: [
-          {
-            id: '2.1',
-            name: '汪汪',
-            path:'/news',
-            icon: <AiOutlineDribbble/>
-          }
-      ]
-    },
-    {
-      id: '3',
-      name: '時間管理',
-      key: '/charts',
-      icon: <AiOutlineTeam/>,
-      children: [
-        {
-          id: '3.1',
-          name: '吃飯',
-          path:'/home',
-          icon: <AiOutlineDribbble/>
-        },
-        {
-          id: '3.2',
-          name: '睡覺',
-          path:'/news',
-          icon: <AiOutlineDribbble/>
-        },
-        {
-          id: '3.3',
-          name: '打東東',
-          path:'/home',
-          icon: <AiOutlineComment/>
-        },
-      ]
-    },
+    // {
+    //   id: '2',
+    //   name: '狗狗怎麼叫',
+    //   icon: <AiOutlineComment/>,
+    //   children: [
+    //       {
+    //         id: '2.1',
+    //         name: '汪汪',
+    //         path:'/news',
+    //         icon: <AiOutlineDribbble/>
+    //       }
+    //   ]
+    // },
+    // {
+    //   id: '3',
+    //   name: '時間管理',
+    //   key: '/charts',
+    //   icon: <AiOutlineTeam/>,
+    //   children: [
+    //     {
+    //       id: '3.1',
+    //       name: '吃飯',
+    //       path:'/home',
+    //       icon: <AiOutlineDribbble/>
+    //     },
+    //     {
+    //       id: '3.2',
+    //       name: '睡覺',
+    //       path:'/news',
+    //       icon: <AiOutlineDribbble/>
+    //     },
+    //     {
+    //       id: '3.3',
+    //       name: '打東東',
+    //       path:'/home',
+    //       icon: <AiOutlineComment/>
+    //     },
+    //   ]
+    // },
   ]
 
 

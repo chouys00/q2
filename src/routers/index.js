@@ -3,49 +3,64 @@ import {Redirect} from 'react-router';
 
 import Layout from '@Components/layout';
 
-
 import Login from '@/pages/login';
 import Register from '@/pages/register';
 import Page404 from '@/pages/page404';
 import Home from '@/pages/home';
 import News from '@/pages/news';
+import Member from '@/pages/member/memberList';
 import ProfileSetting from '@/pages/profileSetting';
 import App from '@/App';
+
+import {Route, Switch} from 'react-router-dom';
 
 const routes = [
   {
     path: '/login',
     exact: true,
     component: Login,
+    requiresAuth: false,
   },
   {
     path: '/register',
     exact: true,
     component: Register,
+    requiresAuth: false,
   },
   {
     path: '/404',
     exact: true,
     component: Page404,
+    requiresAuth: false,
   },
   {
     path: '/',
     component: App,
+    requiresAuth: true,
     routes: [
       {
         path: '/home',
         exact: true,
         component: Home,
+        requiresAuth: true,
+      },
+      {
+        path: '/member/list',
+        exact: true,
+        component: Member,
+        requiresAuth: true,
       },
       {
         path: '/News',
         exact: true,
         component: News,
+        requiresAuth: true,
       },
       {
         path: '/account',
         exact: true,
         component: ProfileSetting,
+        requiresAuth: true,
       },
       {
         path: '/',
@@ -157,4 +172,4 @@ const routes = [
 //   },
 // ];
 
-export default routes;
+export default routes ;

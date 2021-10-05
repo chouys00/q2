@@ -12,6 +12,7 @@ const Header = ({setOpen,open}) => {
   }
 
   const handleLogout = () => {
+    localStorage.removeItem('token')
     history.push('/login')
   }
 

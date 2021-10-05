@@ -1,11 +1,12 @@
 import './login.scss';
 import React, {useEffect, useState} from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {Link, NavLink, useHistory} from 'react-router-dom';
 import verify from './verify.js';
 import {userLogIn} from '@Api/user.js';
 // import alert from '../../common/components/alert/alert'
 
-import {useHistory} from 'react-router-dom';
+import Dialog from '../../components/dialog';
+// import  Dialog from  '@Components/dailog'
 import eye from '../../assets/icon_eye.png';
 
 const Index = () => {
@@ -16,6 +17,8 @@ const Index = () => {
   const [error, setError] = useState({});
   const [showText, setShowText] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
+  const [showDialog, setShowDialog] = useState(false);
+
   const history = useHistory();
 
   const handleOnChange = (e) => {
@@ -36,9 +39,10 @@ const Index = () => {
 
     await userLogIn(data)
         .then(res => {
-          localStorage.setItem('token', res.data.token)
-          localStorage.setItem('user', JSON.stringify(res.data.data))
-          history.push('./home')
+          localStorage.setItem('token', res.data.token);
+          localStorage.setItem('user', JSON.stringify(res.data.data));
+          console.log('7788');
+          history.push('./home');
         })
         .catch(error => {
           console.log(error);
@@ -51,6 +55,21 @@ const Index = () => {
       submitFormData();
     }
   }, [error]);
+
+  const handleRightBtn = () => {
+    console.log(1111111111, 'handleRightBtn');
+    setShowDialog(false);
+  };
+
+  const handleLeftBtn = () => {
+    console.log(11111111111, 'handleLeftBtn');
+    setShowDialog(false);
+  };
+
+  const toggleDialog = () => {
+    // console.log(777888,'handleRightBtn');
+    setShowDialog(true);
+  };
 
   return (
       <div className="loginPage">
@@ -98,8 +117,23 @@ const Index = () => {
           <Link to="/register"><span>註冊</span></Link>
           <div>
             <button className="formButton" onClick={handleSubmit}>登入</button>
+            <button onClick={toggleDialog}>召喚彈窗</button>
           </div>
         </div>
+
+        {
+          showDialog && <Dialog
+              title="这是标题"
+              dialogWidth="60%"
+              handleLeftBtn={handleLeftBtn}
+              handleRightBtn={handleRightBtn}
+              cancelText="残忍离开"
+              sureText="我再想想">
+            <>
+              <span>去去武器走</span>
+            </>
+          </Dialog>
+        }
 
       </div>
   );

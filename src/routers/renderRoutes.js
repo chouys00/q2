@@ -1,43 +1,51 @@
 import React, {Suspense} from 'react';
-import {Route, Redirect, Switch} from 'react-router-dom';
-import routes from './index';
+import {Route, Redirect, Switch } from 'react-router-dom';
 
-const renderRoutes = (
-    routes, authed, authPath = '/login', extraProps = {},
-    switchProps = {}) => routes ? (
+// function renderRoutes(routes, extraProps = {}, switchProps = {}) {
+//   return routes ? (
+//       <Switch {...switchProps}>
+//         {routes.map((route, i) => (
+//             <Route
+//                 key={route.key || i}
+//                 path={route.path}
+//                 exact={route.exact}
+//                 strict={route.strict}
+//                 render={props =>
+//                     route.render ? (
+//                         route.render({...props, ...extraProps, route: route})
+//                     ) : (
+//                         <route.component {...props} {...extraProps}
+//                                          route={route}/>
+//                     )
+//                 }
+//             />
+//         ))}
+//       </Switch>
+//   ) : null;
+// }
+
+const renderRoutes = (routes, authed = false, authPath = '/login', extraProps = {}, switchProps = {}) => routes ? (
     <Switch {...switchProps}>
-      <Suspense fallback={<div>123</div>}>
-        {routes.map((route, i) => {
+      {routes.map((route, i) => (
+          <Route
+              key={route.key || i}
+              path={route.path}
+              exact={route.exact}
+              strict={route.strict}
+              render={(props) => {
+                // console.log(1111111111111,!route.requiresAuth);
+                // console.log(22222222222,authed);
+                // console.log(3333333333333,route.path,authPath);
 
-              return (
-                  <Route
-                      key={route.key || i}
-                      path={route.path}
-                      exact={route.exact}
-                      render={(props) => {
-                        return <route.component {...props} {...extraProps}
-                                                route={route}/>;
-
-                        // if (!route.requiresAuth || authed || route.path ===
-                        //     authPath) {
-                        //   return <route.component {...props} {...extraProps}
-                        //                           route={route}/>;
-                        // }
-                        // return <Redirect
-                        //     to={{
-                        //       pathname: authPath,
-                        //       state: {from: props.location},
-                        //     }}/>;
-                      }}
-                  >
-                  </Route>
-
-
-              );
-
-            },
-        )}
-      </Suspense>
+                if (!route.requiresAuth || authed || route.path === authPath) {
+                  return <route.component {...props} {...extraProps} route={route} />
+                }
+                return <Redirect to={{ pathname: authPath, state: { from: props.location } }} />
+              }}
+          />
+      ))}
     </Switch>
-) : null;
+) : null
+
+
 export default renderRoutes;
