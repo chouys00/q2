@@ -6,7 +6,6 @@ import {userLogIn} from '@Api/user.js';
 // import alert from '../../common/components/alert/alert'
 
 import Dialog from '../../components/dialog';
-// import  Dialog from  '@Components/dailog'
 import eye from '../../assets/icon_eye.png';
 
 const Index = () => {
@@ -123,7 +122,7 @@ const Index = () => {
 
         {
           showDialog && <Dialog
-              title="这是标题"
+              title="我是頭"
               dialogWidth="60%"
               handleLeftBtn={handleLeftBtn}
               handleRightBtn={handleRightBtn}

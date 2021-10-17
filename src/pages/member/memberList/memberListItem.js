@@ -2,10 +2,6 @@ import {useEffect} from 'react';
 
 const MemberListItem = ({item,itemIdx,key}) => {
 
-  useEffect(() => {
-    console.log(111111111,item);
-  }, []);
-
   return (
       <div className="memberListItemWrap">
         <div className="memberListItem">

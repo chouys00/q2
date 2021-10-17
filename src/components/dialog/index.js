@@ -3,7 +3,7 @@ import './dialog.scss'
 import {useEffect} from 'react';
 import { createPortal } from 'react-dom';
 
-const Dialog = (props) => {
+const Dialog = ({dialogWidth='60%',title,children,handleLeftBtn,handleRightBtn}) => {
   const node = document.createElement('div');
   document.body.appendChild(node);
 
@@ -16,12 +16,12 @@ const Dialog = (props) => {
 
   return createPortal(
       <div className="dialog_wrap">
-        <div className="dialog" style={{width: props.dialogWidth}}>
-          <div className="dialog_title">{props.title}</div>
-          <div className="dialog_content">{props.children}</div>
+        <div className="dialog" style={{width: dialogWidth}}>
+          <div className="dialog_title">{title}</div>
+          <div className="dialog_content">{children}</div>
           <div className="dialog_btns">
-            <button onClick={props.handleLeftBtn}>取消</button>
-            <button onClick={props.handleRightBtn}>确定</button>
+            <button onClick={handleLeftBtn}>取消</button>
+            <button onClick={handleRightBtn}>确定</button>
           </div>
         </div>
       </div>

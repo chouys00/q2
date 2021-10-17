@@ -10,6 +10,8 @@ import Home from '@/pages/home';
 import News from '@/pages/news';
 import Member from '@/pages/member/memberList';
 import ProfileSetting from '@/pages/profileSetting';
+import TablePage from '@/pages/tablePage';
+import ListPage from '@/pages/listPage';
 import App from '@/App';
 
 import {Route, Switch} from 'react-router-dom';
@@ -42,25 +44,36 @@ const routes = [
         path: '/home',
         exact: true,
         component: Home,
-        requiresAuth: true,
+        requiresAuth: false,
       },
       {
         path: '/member/list',
         exact: true,
         component: Member,
-        requiresAuth: true,
+        requiresAuth: false,
       },
       {
         path: '/News',
         exact: true,
         component: News,
-        requiresAuth: true,
+        requiresAuth: false,
       },
       {
         path: '/account',
         exact: true,
         component: ProfileSetting,
-        requiresAuth: true,
+        requiresAuth: false,
+      },
+      {
+        path: '/tablePage',
+        exact: true,
+        component: TablePage,
+        requiresAuth: false,
+      },{
+        path: '/listPage',
+        exact: true,
+        component: ListPage,
+        requiresAuth: false,
       },
       {
         path: '/',

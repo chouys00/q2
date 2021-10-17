@@ -22,8 +22,14 @@ const SideBar = ({open}) => {
   const menuList = [
     {
       id: '1',
-      name: '會員管理',
-      path:'/member/list',
+      name: '會員列表(列表式)',
+      path:'/listPage',
+      icon: <AiOutlineTeam/>
+    },
+    {
+      id: '2',
+      name: '會員列表(表格式)',
+      path:'/tablePage',
       icon: <AiOutlineTeam/>
     },
     // {
